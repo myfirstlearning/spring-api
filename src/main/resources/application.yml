@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: spring-api
+
+server:
+  servlet:
+    context-path: /spring-api
