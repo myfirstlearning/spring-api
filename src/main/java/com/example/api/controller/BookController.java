@@ -53,7 +53,6 @@ public class BookController {
         Book book = bookService.getBook(isbn);
 
         return book;
-        
     }
 
 //     curl --location --request GET 'http://localhost:8080/spring-api/book-app/requestedBookByReqBody' \
