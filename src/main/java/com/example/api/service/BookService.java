@@ -10,8 +10,7 @@ import java.util.UUID;
 
 @Component
 public class BookService {
-
-
+    
     public Book getBook(String isbn) throws Exception {
         Book book = getAllBooks().stream()
                 .filter(b -> b.getIsbn().equals(isbn))
