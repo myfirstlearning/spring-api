@@ -1,0 +1,78 @@
+openapi: 3.1.0
+info:
+  title: Calculator API
+  description: Calculator API implemented in OpenAPI 3.1.0
+  version: 1.0.0
+tags:
+  - name: Calculator
+    description: the Calculator API
+paths:
+  /add/{firstNumber}:
+    get:
+      tags:
+        - Calculator
+      summary: Add two numbers
+      operationId: addNumbers
+      parameters:
+        - in: path
+          name: firstNumber
+          required: true
+          schema:
+            type: integer
+        - in: query
+          name: secondNumber
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: The sum of the two numbers
+          content:
+            application/json:
+              schema:
+                type: integer
+        '400':
+          description: Invalid input provided
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error message for invalid input
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Not Found error message
+  /subtract/{firstNumber}:
+    get:
+      tags:
+        - Calculator
+      summary: Subtract two numbers
+      operationId: subtractNumbers
+      parameters:
+        - in: path
+          name: firstNumber
+          required: true
+          schema:
+            type: integer
+        - in: query
+          name: secondNumber
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: The difference of the two numbers
+          content:
+            application/json:
+              schema:
+                type: integer
+
